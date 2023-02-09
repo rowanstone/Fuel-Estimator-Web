@@ -1,0 +1,23 @@
+{
+  "name": "fuelestimator",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "extend": "^3.0.2",
+    "mongoose": "^5.3.13",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-auto-increment-fix": "^5.0.2",
+    "node.js": "0.0.0",
+    "require.js": "^1.0.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
