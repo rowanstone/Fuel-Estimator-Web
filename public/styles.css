@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+	text-align: center;
+    height: 100%;
+}
+.container{
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+/* Style the header */
+header {
+    background-color: #003264;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+    float: center;
+	text-align: center;
+    width: 100%;
+    height: 59px;
+    background: #b3cccc;
+    padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+    list-style-type: none;
+	position: center;
+	width: 100%;
+	margin: 0;
+    padding: 1px;
+	display: flex;
+	flex-flow: row nowrap;
+	overflow: hidden;
+	justify-content: space-around;
+	background-color: #b3cccc;
+}
+
+li {float: left;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+	display: inline-block;
+
+}
+
+li .active {
+	background-color: orange;
+}
+li a	{display: block;
+		 padding: 0px 16px;
+		 text-decoration: none;
+}
+li a:hover {	color: white;}
+
+
+article {
+    float: left;
+    padding: 20px;
+    width: 100%;
+    background-color: #ffdd99;
+    height: 100%;
+}
+
+/* Clear floats after the columns */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Hide IFrame boxes from page. Comment this section out to see POST/GET data being sent to server */
+iframe {
+    width: 0;
+    height: 0;
+    border: 0;
+    border: none;
+}
+
+/* Sign In Pop Up box*/
+#signInPrompt{
+    margin: 0;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 50px;
+    padding-top: 10px;
+    align: center;
+    width: 40%;
+    height: 40%;
+    position: fixed;
+    background: #ffdd99;
+    border: solid #000000 2px;
+    z-index: 9;
+    visibility: visible;
+}
+
+
+/*Style the quote form*/
+.quote-form { padding: 30px;
+}
+.quote-form .field {
+	padding: 2px; 
+	margin: 2px; 
+	background: #ffdd99;
+}
+.quote-form .field label {
+	display: inline-block;
+	width: 100px;
+	margin-left: 5px;
+}
+.quote-form .field input {
+	display: inline-block;
+	float: right;
+	}
+
+/* Style the footer */
+footer {
+    background-color: #003264;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+footer .div {align: center;}
+
+footer .div .p {align: center;}
+
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}

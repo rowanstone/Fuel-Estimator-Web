@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fuel Rate Estimator - Quote History</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="processData.js" type="text/javascript"></script>
+    <!--<script>
+        class Quote {
+            constructor(clientID, requestDate, deliveryDate, gallonsReq, suggestedPrice, totalAmountDue) {
+                this.clientID = clientID;
+                this.requestDate = requestDate;
+                this.deliveryDate = deliveryDate;
+                this.gallonsReq = gallonsReq;
+                this.suggestedPrice = suggestedPrice;
+                this.totalAmountDue = totalAmountDue;
+            }
+        }
+
+        class History{
+            constructor(){
+                this.historyList = [];
+            }
+            showHistory(){
+                console.log(this.historyList);
+            }
+        }
+
+        function getJSON(){
+            historyJSON = [
+                { "item": 1, "reqDate": "08/23/2018", "delDate":"09/24/2018", "gallons": 200, "rate":2.94, "total":588 },
+                { "item": 2, "reqDate": "09/20/2018", "delDate":"10/12/2018", "gallons": 200, "rate":2.83, "total":566 }
+            ];
+            var historyData = JSON.stringify(historyJSON);
+            var parseData = JSON.parse(historyData);
+
+            var history = new History();
+
+            for ( var n = 0; n < parseData.length; n++){
+               var quote = new Quote(parseData[n].item, parseData[n].reqDate, parseData[n].delDate, parseData[n].gallons, parseData[n].rate, parseData[n].total);
+               history.historyList.push(quote);
+               console.log("Print this test.");
+               console.log(quote);
+               console.log(history.historyList)
+            }
+        }
+        getJSON();
+    </script>-->
+</head>
+<body>
+
+<header onload=return"getJSON()" >
+  <h2>Fuel Rate Estimator</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="index.html"><b>Home</b></a></li>
+      <li><a href="client.html"><b>Client Information</b></a></li>
+      <li><a href="quote.html"><b>Request a Quote</b></a></li>
+      <li><a href="history.html"><b>Quote History</b></a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Quote History</h1>
+    <table id="table" style="width:100%" >
+        <tr>
+            <th>Item #</th>
+            <th>Request Date</th> 
+            <th>Delivery Date</th>
+            <th>Gallons</th>
+            <th>Rates per gallon</th>
+            <th>Total Price</th>
+        </tr>
+		
+		<tr> 
+			<td>
+                <br/>
+                <br/>
+            </td> 
+		</tr>
+
+            <script>
+                class Quote {
+                    constructor(clientID, requestDate, deliveryDate, gallonsReq, suggestedPrice, totalAmountDue) {
+                        this.clientID = clientID;
+                        this.requestDate = requestDate;
+                        this.deliveryDate = deliveryDate;
+                        this.gallonsReq = gallonsReq;
+                        this.suggestedPrice = suggestedPrice;
+                        this.totalAmountDue = totalAmountDue;
+                    }
+                }
+
+                class History{
+                    constructor(){
+                        this.historyList = [];
+                    }
+                    showHistory(){
+                        console.log(this.historyList);
+                    }
+                }
+
+                function getJSON(){ // Get JSON Object
+                    historyJSON = [
+                        { "item": 1, "reqDate": "08/23/2018", "delDate":"09/24/2018", "gallons": 200, "rate":2.94, "total":588 },
+                        { "item": 2, "reqDate": "09/20/2018", "delDate":"10/12/2018", "gallons": 200, "rate":2.83, "total":566 }
+                    ];
+                    var historyData = JSON.stringify(historyJSON);
+                    var parseData = JSON.parse(historyData);
+
+                    var history = new History();
+
+                    for ( var n = 0; n < parseData.length; n++){
+                        var quote = new Quote(parseData[n].item, parseData[n].reqDate, parseData[n].delDate, parseData[n].gallons, parseData[n].rate, parseData[n].total);
+                        history.historyList.push(quote);
+                        console.log("Print this test.");
+                        console.log(quote);
+                        console.log(history.historyList);
+                        var table = document.getElementById('table');
+                        var tr = document.createElement("tr");
+                        <!--var td = document.createElement("td");-->
+                        for (var i = 0; i < 6; i++) {
+                            var td = document.createElement("td");
+                            if (i == 0)
+                                var txt = document.createTextNode(history.historyList[n].clientID);
+                            else if (i == 1)
+                                var txt = document.createTextNode(history.historyList[n].requestDate);
+                            else if (i == 2)
+                                var txt = document.createTextNode(history.historyList[n].deliveryDate);
+                            else if (i == 3)
+                                var txt = document.createTextNode(history.historyList[n].gallonsReq + 'g');
+                            else if (i == 4)
+                                var txt = document.createTextNode(history.historyList[n].suggestedPrice);
+                            else if (i == 5)
+                                var txt = document.createTextNode('$' + history.historyList[n].totalAmountDue + ' USD');
+                            td.appendChild(txt);
+                            tr.appendChild(td);
+                            <!--table.appendChild(tr);-->
+                        }
+                        table.appendChild(tr);
+                    }
+                }
+                getJSON();
+            </script>
+
+    </table>
+
+  </article>
+</section>
+
+<footer>
+  <div>Contact Information</div> 
+  <p>512-245-2111<br>
+  FuelRateEstimator@txstate.edu<br>
+  601 University Dr, San Marcos, TX 78666 </p>
+</footer>
+
+</body>
+</html>
